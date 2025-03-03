@@ -1,0 +1,26 @@
+server:
+  port: 8081  # Puerto donde correrá el microservicio
+
+spring:
+  application:
+    name: microservicio-buscador
+
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+
+  elasticsearch:
+    uris: http://elasticsearch-dev:9200  # Dirección del servidor Elasticsearch en Docker
+
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/  # Se cambia localhost por eureka-server
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
