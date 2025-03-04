@@ -58,35 +58,6 @@ public class ItemController {
     public void deleteItem(@PathVariable Long id) {
         repository.deleteById(id);
     }
-
-    // 🔎 Nueva búsqueda: Buscar productos por nombre o descripción
-    @GetMapping("/search")
-    public List<Item> searchItems(@RequestParam String query) {
-        return repository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(query, query);
-    }
-
-    // 🔎 Nueva búsqueda: Filtrar por categoría
-    @GetMapping("/category/{category}")
-    public List<Item> getByCategory(@PathVariable String category) {
-        return repository.findByCategory(category);
-    }
-
-    // 🔎 Ordenar productos por precio (ascendente)
-    @GetMapping("/category/{category}/sort/asc")
-    public List<Item> getByCategorySortedAsc(@PathVariable String category) {
-        return repository.findByCategoryOrderByPriceAsc(category);
-    }
-
-    // 🔎 Ordenar productos por precio (descendente)
-    @GetMapping("/category/{category}/sort/desc")
-    public List<Item> getByCategorySortedDesc(@PathVariable String category) {
-        return repository.findByCategoryOrderByPriceDesc(category);
-    }
-    
-    @GetMapping("/search-as-you-type")
-    public List<Item> searchAsYouType(@RequestParam String query) {
-        return repository.searchByName(query);
-    }
     
     @GetMapping("/facets")
     public Map<String, Object> getFacets() throws IOException {

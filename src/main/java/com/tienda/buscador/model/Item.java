@@ -6,27 +6,20 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
 @Data
 @Document(indexName = "items")
 public class Item {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Field(type = FieldType.Search_As_You_Type)
     private String name;
-
-    @Field(type = FieldType.Text, analyzer = "standard", searchAnalyzer = "standard")
     private String description;
-
-    @Field(type = FieldType.Keyword)  // Para búsquedas exactas
-    private String category;
-
-    @Field(type = FieldType.Double)  // Permite ordenar productos por precio
     private double price;
-
-    @Field(type = FieldType.Text)  // Almacena la URL de la imagen
-    private String image;
     
     public Long getId() {
         return id;
