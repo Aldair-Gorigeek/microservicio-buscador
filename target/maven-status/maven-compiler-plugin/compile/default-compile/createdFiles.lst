@@ -2,4 +2,3 @@ com\tienda\buscador\controller\ItemController.class
 com\tienda\buscador\model\Item.class
 com\tienda\buscador\MicroservicioBuscadorApplication.class
 com\tienda\buscador\repository\ItemRepository.class
-com\tienda\buscador\repository\ItemService.class

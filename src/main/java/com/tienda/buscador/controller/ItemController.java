@@ -2,7 +2,6 @@ package com.tienda.buscador.controller;
 
 import com.tienda.buscador.model.Item;
 import com.tienda.buscador.repository.ItemRepository;
-import com.tienda.buscador.repository.ItemService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +22,7 @@ public class ItemController {
 
     @Autowired
     private ItemRepository repository;
-    
-    @Autowired
-    private ItemService itemService;
+
 
 
     @GetMapping
@@ -58,11 +55,7 @@ public class ItemController {
     public void deleteItem(@PathVariable Long id) {
         repository.deleteById(id);
     }
-    
-    @GetMapping("/facets")
-    public Map<String, Object> getFacets() throws IOException {
-        return itemService.getCategoryFacets();
-    }
+
 
 
 }

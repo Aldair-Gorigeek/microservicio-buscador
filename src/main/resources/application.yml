@@ -1,19 +1,19 @@
 server:
-  port: 8081  # Puerto del microservicio buscador
+  port: 8081  # Puerto donde correrá el microservicio buscador
 
 spring:
   application:
     name: microservicio-buscador
 
   datasource:
-    url: jdbc:mysql://mysql.railway.internal:3306/railway  # Conexión a MySQL en Railway
+    url: jdbc:mysql://mysql.railway.internal:3306/railway
     username: root
     password: PifaHsmeSfDMmOmkQmDuIZwcjCpVLICw
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update  # Permite que Hibernate actualice las tablas automáticamente
+      ddl-auto: update  # Crea las tablas automáticamente si no existen
     show-sql: true
     database-platform: org.hibernate.dialect.MySQLDialect
     open-in-view: false
@@ -26,4 +26,3 @@ eureka:
     fetch-registry: true
   instance:
     prefer-ip-address: true
-    hostname: ${RAILWAY_PUBLIC_DOMAIN}

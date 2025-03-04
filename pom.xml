@@ -34,11 +34,11 @@
         </dependency>
 
         <!-- Driver MySQL -->
-        <!--<dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
-        </dependency>-->
+        </dependency>
 
         <!-- Eureka Client -->
         <dependency>
@@ -58,7 +58,7 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!-- Elasticsearch -->
+        <!-- Elasticsearch
         <dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
@@ -66,8 +66,8 @@
 		<dependency>
 		    <groupId>co.elastic.clients</groupId>
 		    <artifactId>elasticsearch-java</artifactId>
-		    <version>8.9.0</version> <!-- Asegúrate de usar una versión compatible -->
-		</dependency>
+		    <version>8.9.0</version>  Asegúrate de usar una versión compatible 
+		</dependency>-->
     </dependencies>
 
     <dependencyManagement>
